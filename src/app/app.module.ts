@@ -7,16 +7,33 @@ import { EmpleadoAlternoComponent } from './empleado-alterno/empleado-alterno.co
 import { CaracteristicasClienteCComponent } from './caracteristicas-cliente-c/caracteristicas-cliente-c.component';
 import { ServicioEmpleadosService } from './servicio-empleados.service';
 import { ClienteService } from './cliente.service';
+import { HomeComponentComponent } from './home-component/home-component.component';
+import { ProyextosComponentComponent } from './proyextos-component/proyextos-component.component';
+import { QuienesSomosComponent } from './quienes-somos/quienes-somos.component';
+import { ContactoComponetComponent } from './contacto-componet/contacto-componet.component';
+import { RouterModule, Routes } from '@angular/router';
+
+const appRoutes: Routes = [
+  {path: '', component: HomeComponentComponent},
+  {path: 'proyectos', component: ProyextosComponentComponent},
+  {path: 'quienes', component: QuienesSomosComponent},
+  {path: 'contacto', component: ContactoComponetComponent}
+]
 
 @NgModule({
   declarations: [
     AppComponent,
     EmpleadoAlternoComponent,
-    CaracteristicasClienteCComponent
+    CaracteristicasClienteCComponent,
+    HomeComponentComponent,
+    ProyextosComponentComponent,
+    QuienesSomosComponent,
+    ContactoComponetComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    RouterModule.forRoot(appRoutes)
   ],
   providers: [ServicioEmpleadosService,
   ClienteService],
