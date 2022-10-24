@@ -13,75 +13,17 @@
           <a class="nav-link" href="#">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Proyectos</a>
+          <a class="nav-link" href="proyectos">Proyectos</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link disabled">Quienes somos</a>
+          <a class="nav-link " href="quienes">Quienes somos</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link disabled">Contacto</a>
+          <a class="nav-link " href="contacto">Contacto</a>
         </li>
       </ul>
     </div>
   </div>
 </nav>
 
-<div class="container">
-
-
-  <div class="col">
-    <h1 style="text-align:center;">{{titulo}}</h1>
-    <br>
-    <br>
-    <form class="form-group row">
-      <div class="form-group col">
-        <label for="nombre">
-          Nombre:
-        </label>
-        <input type="text" name="nombre" id="nombre" placeholder="Nombre" class="form-control" [(ngModel)]="cuadroNombre" >
-
-        <div class="form-group col">
-          <label for="apellido">
-            Apellido:
-          </label>
-          <input type="text" name="apellido" id="apellido" placeholder="apellido" class="form-control" [(ngModel)]="cuadroApellido" >
-        </div>
-
-        <div class="form-group col">
-          <label for="cargo">
-            Cargo:
-          </label>
-          <input type="text" name="cargo" id="cargo" placeholder="cargo" class="form-control" [(ngModel)]="cuadroCargo" >
-        </div>
-
-        <div class="form-group col">
-          <label for="salario">
-            Salario:
-          </label>
-          <input type="text" name="salario" id="salario" placeholder="salario" class="form-control" [(ngModel)]="cuadroSalario" >
-        </div>
-        <br>
-        <br>
-        <div class="col">
-          <button type="submit" class="btn btn-primary" (click)="agregarCliente()">Agregar clientes</button>
-        </div>
-
-      </div>
-
-    </form>
-    <br>
-<p *ngIf="registrado; else sinRegistrar">{{mensaje}}  {{nombre}}
-  {{apellido}} y tiene el cargo de <span [ngStyle]="{background: cargo=='director' ? 'red' : 'green'}">{{cargo}}  </span> </p>
-
-  <ng-template #sinRegistrar>
-    <p>Nadie registrado</p>
-  </ng-template>
-  </div>
-</div>
-
-<br>
-<br>
-<br>
-
-<app-empleado-alterno *ngFor="let cliente of clientes; let i=index" [empleadoDeLista]="cliente" [indice]="i"> </app-empleado-alterno>
-
+<router-outlet></router-outlet>
