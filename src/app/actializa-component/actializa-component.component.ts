@@ -5,27 +5,23 @@ import { ClienteService } from '../cliente.service';
 import { ServicioEmpleadosService } from '../servicio-empleados.service';
 
 @Component({
-  selector: 'app-proyextos-component',
-  templateUrl: './proyextos-component.component.html',
-  styleUrls: ['./proyextos-component.component.css']
+  selector: 'app-actializa-component',
+  templateUrl: './actializa-component.component.html',
+  styleUrls: ['./actializa-component.component.css']
 })
-export class ProyextosComponentComponent implements OnInit {
+export class ActializaComponentComponent implements OnInit {
   titulo = 'Listado de clientes';
   mensaje = '';
   registrado =false;
   cargo:string="";
   nombre = '';
   apellido = '';
-
   constructor(private router: Router,
     private service:ServicioEmpleadosService,
     private clienteService:ClienteService) { }
 
   ngOnInit(): void {
     this.clientes=this.clienteService.clientes;
-  }
-  backHome(){
-    this.router.navigate(['']);
   }
   clientes:Cliente[]=[];
 

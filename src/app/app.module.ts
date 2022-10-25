@@ -12,12 +12,14 @@ import { ProyextosComponentComponent } from './proyextos-component/proyextos-com
 import { QuienesSomosComponent } from './quienes-somos/quienes-somos.component';
 import { ContactoComponetComponent } from './contacto-componet/contacto-componet.component';
 import { RouterModule, Routes } from '@angular/router';
+import { ActializaComponentComponent } from './actializa-component/actializa-component.component';
 
 const appRoutes: Routes = [
   {path: '', component: HomeComponentComponent},
   {path: 'proyectos', component: ProyextosComponentComponent},
   {path: 'quienes', component: QuienesSomosComponent},
-  {path: 'contacto', component: ContactoComponetComponent}
+  {path: 'contacto', component: ContactoComponetComponent},
+  {path: 'f5/:id', component: ActializaComponentComponent},
 ]
 
 @NgModule({
@@ -28,7 +30,8 @@ const appRoutes: Routes = [
     HomeComponentComponent,
     ProyextosComponentComponent,
     QuienesSomosComponent,
-    ContactoComponetComponent
+    ContactoComponetComponent,
+    ActializaComponentComponent
   ],
   imports: [
     BrowserModule,
