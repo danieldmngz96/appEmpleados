@@ -26,4 +26,19 @@ export class ClienteService{
    "Salario" + "\n" + clientes.salario)
     this.clientes.push(clientes);
   }
+  encontrarCliente(indice:number){
+    let cliente:Cliente = this.clientes[indice];
+    return cliente;
+  }
+  actualizarClienteServicio(indice:number, cliente:Cliente){
+   let empleadoModidicado = this.clientes[indice];
+   empleadoModidicado.nombre = cliente.nombre;
+   empleadoModidicado.apellido = cliente.apellido;
+   empleadoModidicado.salario = cliente.salario;
+   empleadoModidicado.cargo = cliente.cargo;
+  }
+
+  deleteClienteServicio(indice:number){
+    this.clientes.splice(indice, 1);
+  }
 }
